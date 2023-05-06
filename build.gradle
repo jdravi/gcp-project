@@ -1,11 +1,22 @@
+buildscript {
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath 'com.google.cloud.tools:appengine-gradle-plugin:2.2.0'
+	}
+}
+
 plugins {
 	id 'java'
 	id 'org.springframework.boot' version '3.0.6'
 	id 'io.spring.dependency-management' version '1.1.0'
+	//id 'com.google.cloud.tools.appengine' version '2.4.4'
 }
 
 group = 'com.example'
 version = '0.0.1-SNAPSHOT'
+apply plugin: 'com.google.cloud.tools.appengine'
 /*
 java {
 	sourceCompatibility = JavaVersion.VERSION_17
@@ -30,12 +41,14 @@ dependencies {
 	//implementation 'org.springframework.cloud:spring-cloud-starter-config'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
-//dependencyManagement {
-//	imports {
-//		mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+
+//appengine {  // App Engine tasks configuration
+//	deploy {   // deploy configuration
+//		projectId = 'GCLOUD_CONFIG' // delegate to project in gcloud config
+//		version = 'GCLOUD_CONFIG'   // delegate to gcloud to generate a version
 //	}
 //}
-//
+
 
 tasks.named('test') {
 	useJUnitPlatform()
