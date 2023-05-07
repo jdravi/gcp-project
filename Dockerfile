@@ -2,7 +2,7 @@
 FROM gradle:jdk17 AS build
 WORKDIR /app
 COPY . .
-RUN ./gradlew --no-daemon clean build -x test
+RUN chmod +x gradlew && ./gradlew --no-daemon clean build -x test
 
 # Use a smaller base image for the final image
 FROM openjdk:17-jre-slim
