@@ -16,3 +16,5 @@ steps:
       - '--image-url=gcr.io/$PROJECT_ID/gcpproject:$SHORT_SHA'
       - '--project=$PROJECT_ID'
 timeout: 1800s
+options:
+  logging: CLOUD_LOGGING_ONLY
