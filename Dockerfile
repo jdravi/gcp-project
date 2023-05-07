@@ -5,7 +5,7 @@ COPY . .
 RUN chmod +x gradlew && ./gradlew --no-daemon clean build -x test
 
 # Use a smaller base image for the final image
-FROM openjdk:17-jre-slim
+FROM openjdk:17
 WORKDIR /app
 COPY --from=build /app/build/libs/*.jar /app/app.jar
 
