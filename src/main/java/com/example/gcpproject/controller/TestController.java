@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/test")
-//
+
 public class TestController {
 
 
@@ -15,7 +15,7 @@ public class TestController {
     public User getTestData(){
 
         User user = new User();
-        user.setName("Ravi Prakash:cloudTest");
+        user.setName("Ravi Prakash:cloudTest1");
         user.setAge(30);
         user.setAddress("Ballia");
         return user;
