@@ -11,18 +11,17 @@ plugins {
 	id 'java'
 	id 'org.springframework.boot' version '3.0.6'
 	id 'io.spring.dependency-management' version '1.1.0'
-	//id 'com.google.cloud.tools.appengine' version '2.4.4'
 }
 
 group = 'com.example'
 version = '0.0.1-SNAPSHOT'
 apply plugin: 'com.google.cloud.tools.appengine'
-/*
+
 java {
 	sourceCompatibility = JavaVersion.VERSION_17
 	targetCompatibility = JavaVersion.VERSION_17
 }
-*/
+
 
 
 
@@ -30,9 +29,9 @@ repositories {
 	mavenCentral()
 }
 
-ext {
-	set('springCloudVersion', "2022.0.2")
-}
+//ext {
+//	set('springCloudVersion', "2022.0.2")
+//}
 
 dependencies {
 	//implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
@@ -42,12 +41,15 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
-//appengine {  // App Engine tasks configuration
-//	deploy {   // deploy configuration
-//		projectId = 'GCLOUD_CONFIG' // delegate to project in gcloud config
-//		version = 'GCLOUD_CONFIG'   // delegate to gcloud to generate a version
-//	}
-//}
+
+
+appengine {
+	deploy {
+		projectId = 'gcp-project-385614' // replace with your GCP project ID
+		version = '1'
+		promote = true
+	}
+}
 
 
 tasks.named('test') {
