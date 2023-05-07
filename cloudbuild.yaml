@@ -8,3 +8,5 @@ steps:
       - 'app.yaml'
       - '--image-url=gcr.io/$PROJECT_ID/<SERVICE_NAME>:$SHORT_SHA'
 timeout: 1800s
+options:
+  logging: CLOUD_LOGGING_ONLY
