@@ -1,6 +1,8 @@
 package com.example.gcpproject.controller;
 
 import com.example.gcpproject.message.entity.User;
+import com.example.gcpproject.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
@@ -11,12 +13,12 @@ import java.util.HashMap;
 public class UserController {
 
 
-
-    private HashMap<String,User> userDetails = new HashMap<>();
+    @Autowired
+    private UserService userService;
 
     @GetMapping
     public Object getUserByName(){
-        return userDetails;
+        return userService.getUserDetails();
     }
 
     @PostMapping(
@@ -26,8 +28,7 @@ public class UserController {
 
     public User createUser(@RequestBody User user){
 
-        userDetails.put(user.getName(),user);
-        return user;
+       return userService.createUser(user);
 
     }
 
