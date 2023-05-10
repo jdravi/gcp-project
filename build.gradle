@@ -39,7 +39,7 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	//implementation 'org.springframework.cloud:spring-cloud-starter-config'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
-	implementation 'mysql:mysql-connector-java:8.0.26'
+	implementation 'mysql:mysql-connector-java:8.0.28'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	// Lombok
 	implementation 'org.projectlombok:lombok:1.18.20'
@@ -52,7 +52,6 @@ dependencies {
 	implementation 'org.hibernate:hibernate-validator:6.2.0.Final'
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
 	implementation 'com.google.cloud.sql:mysql-socket-factory:1.2.2'
-
 
 
 }
