@@ -16,6 +16,14 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+
+    @GetMapping(
+            value = "/test"
+    )
+    public Object test(){
+        return "Testing";
+    }
+
     @GetMapping
     public Object getUserByName(){
         return userService.getUserDetails();
